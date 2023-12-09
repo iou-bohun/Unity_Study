@@ -4,7 +4,7 @@
 1. 틀을 만들자
    * Dialogue 클래스와 DialogueEvent
      *
-     ``` c#
+``` c#
      public class Dialogue
 {
     [Tooltip("대사 치는 캐릭터 이름")]
