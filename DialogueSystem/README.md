@@ -3,21 +3,22 @@
 
 1. 틀을 만들자
    * Dialogue 클래스와 DialogueEvent
-``` c#
-     public class Dialogue
-{
-    [Tooltip("대사 치는 캐릭터 이름")]
-    public string name;
-    [Tooltip("대사 내용")]
-    public string[] contexts;
-}
-
-public class DialogueEvent
-{
-    public string name; //이벤트의 이름
-
-    public Vector2 line; // 대사 라인
-    public Dialogue[] dialogues;
-}
-```
-한다
+      ``` c#
+           public class Dialogue
+      {
+          [Tooltip("대사 치는 캐릭터 이름")]
+          public string name;
+          [Tooltip("대사 내용")]
+          public string[] contexts;
+      }
+      
+      public class DialogueEvent
+      {
+          public string name; //이벤트의 이름
+      
+          public Vector2 line; // 대사 라인
+          public Dialogue[] dialogues;
+      }
+      ```
+     Dialogue는 한명의 대사를 담게 되고 DialogueEvent클래스는 인물들을 담게된다.
+     Dialogue의 contents는 그 인물의 각각의 대사를 담게된다. 
