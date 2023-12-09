@@ -3,7 +3,6 @@
 
 1. 틀을 만들자
    * Dialogue 클래스와 DialogueEvent
-     *
 ``` c#
      public class Dialogue
 {
