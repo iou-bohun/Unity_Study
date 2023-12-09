@@ -20,6 +20,4 @@ public class DialogueEvent
     public Dialogue[] dialogues;
 }
 ```
-     
-     
-       
+한다
