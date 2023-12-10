@@ -60,7 +60,7 @@
               return dialogueList.ToArray();//리스트를 반환 타입인 배열로 
           }
      ```
-     4. CSV 파일 형태
-        * ![image](https://github.com/iou-bohun/Unity_Study/assets/56661597/080e6361-e9f6-45b3-88db-618c14e6fb20)
+4. CSV 파일 형태
+   * ![image](https://github.com/iou-bohun/Unity_Study/assets/56661597/080e6361-e9f6-45b3-88db-618c14e6fb20)
 
      
