@@ -34,6 +34,9 @@
       이 스크립트를 오브젝트에 할당하면  다음과 같이 나오게 된다.
      ![image](https://github.com/iou-bohun/Unity_Study/assets/56661597/9dfb6fdc-5e48-4b64-bd9f-cdf1de9bcfaf)
 3. 데이터르 넘겨주는 스크립트
+   * 넘겨주는 데이터 시트   
+     ![image](https://github.com/iou-bohun/Unity_Study/assets/56661597/dc247a98-24b5-4bac-8e43-cf2a0e89770d)
+
    * DialogueParser
      ```c#
      public class DialogueParser : MonoBehaviour
@@ -60,7 +63,6 @@
               return dialogueList.ToArray();//리스트를 반환 타입인 배열로 
           }
      ```
-4. CSV 파일 형태
-   * ![image](https://github.com/iou-bohun/Unity_Study/assets/56661597/080e6361-e9f6-45b3-88db-618c14e6fb20)
+
 
      
