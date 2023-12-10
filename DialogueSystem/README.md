@@ -22,3 +22,16 @@
       ```
      Dialogue는 한명의 대사를 담게 되고 DialogueEvent클래스는 인물들을 담게된다.
      Dialogue의 contents는 그 인물의 각각의 대사를 담게된다. 
+2. 실제 대화를 담게 될 스크립트
+   * InteractionEvent
+     ``` c#
+     public class InteractionEvent : MonoBehaviour
+      {
+          [SerializeField]
+          DialogueEvent dialogue;
+      }
+      ```
+      이 스크립트를 오브젝트에 할당하면  다음과 같이 나오게 된다.
+     ![image](https://github.com/iou-bohun/Unity_Study/assets/56661597/9dfb6fdc-5e48-4b64-bd9f-cdf1de9bcfaf)
+
+     
