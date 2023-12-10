@@ -71,7 +71,7 @@
    string[] row = data[i].Split(new char[] { ',' });  // "," 기준으로 나눠서 저장
     ```
    이렇게 하면 data의 한 줄이 ,를 기준으로 나눠진 뒤 row에 각각 저장되게 된다.
-   ![image](https://github.com/iou-bohun/Unity_Study/assets/56661597/b4d9b172-1c2e-471b-8dbb-99d06b59e8c8)
+   ![image](https://github.com/iou-bohun/Unity_Study/assets/56661597/b4d9b172-1c2e-471b-8dbb-99d06b59e8c8)   
    이 잘라진 문장들을 Dialogue 에 넘긴다.   
    ```c#
    //대사의 행 만큼 반복
