@@ -113,7 +113,51 @@
         else break; //i가 대사 전체 길이보다 길면 빠져나오기 
     } while (row[0].ToString() == ""); // ID가 빈칸이면 반복
    ```   
-  그래서 다음과 같은 반복문을 실행해준다. 
+  그래서 다음과 같은 반복문을 실행해준다.   
+  ```c#
+ dialogue.contexts = contextList.ToArray(); //대사 리스트 dialogue에 저장
+ dialogueList.Add(dialogue);
+```
+그후 저장된 dialogue(대사인물과. 대사)를 dialoguelist에 저잗한다. 
+
+4. DialogudMAnager 스크립트
+   * ```c#
+     public class DatabaseManager : MonoBehaviour
+      {
+          public static DatabaseManager Instance;
+          [SerializeField] string csv_FileName;
+      
+          Dictionary<int, Dialogue> dialogueDic = new Dictionary<int, Dialogue>();// 번호로 찾고싶은 대사를 찾는다 
+      
+          public static bool isFinish = false; // 파싱한 데이터를 전부 저장 했는지 여부 
+      
+          private void Awake()
+          {
+              if(Instance == null)
+              {
+                  Instance = this;
+                  DialogueParser theParser = GetComponent<DialogueParser>();
+                  Dialogue[] dialogues = theParser.parse(csv_FileName);   
+                  for(int i=0; i<dialogues.Length; i++)
+                  {
+                      dialogueDic.Add(i+1, dialogues[i]);
+                  }
+                  isFinish = true;
+              }
+          }
+          public Dialogue[] GetDialogue(int _startNum, int _endNum)
+          {
+              List<Dialogue> dialogueList = new List<Dialogue>(); 
+      
+              for(int i=0; i<= _endNum - _startNum; i++)
+              {
+                  dialogueList.Add(dialogueDic[_startNum + i]);
+              }
+              return dialogueList.ToArray();
+          }
+      }
+     ```
+     
 
    
 
