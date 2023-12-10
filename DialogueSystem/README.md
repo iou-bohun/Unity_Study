@@ -66,8 +66,10 @@
     이 스크립트의 data[i] 에는 다음과 같이 값이 저장된다.
    ![image](https://github.com/iou-bohun/Unity_Study/assets/56661597/94585acb-a72f-418c-88c3-81366d53faa7)   
    시트의 각 칸을 ,로 나눠서 저장하는 csv파일이기에 ,가 중간에 포함되어있는것을 볼 수 있다.
-   하지만 지금 원하는 것은 저걸 쪼개서 보여주는것 이기 때문에 이 data를 ,를 기준으로 나눠준다.
-   ```c# string[] row = data[i].Split(new char[] { ',' });  // "," 기준으로 나눠서 저장 ```
+   하지만 지금 원하는 것은 저걸 쪼개서 보여주는것 이기 때문에 이 data를 ,를 기준으로 나눠준다.   
+   ``` c#
+   string[] row = data[i].Split(new char[] { ',' });  // "," 기준으로 나눠서 저장
+    ```
    이렇게 하면 data의 한 줄이 ,를 기준으로 나눠진 뒤 row에 각각 저장되게 된다.
    ![image](https://github.com/iou-bohun/Unity_Study/assets/56661597/b4d9b172-1c2e-471b-8dbb-99d06b59e8c8)
 
