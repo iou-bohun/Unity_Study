@@ -72,6 +72,50 @@
     ```
    이렇게 하면 data의 한 줄이 ,를 기준으로 나눠진 뒤 row에 각각 저장되게 된다.
    ![image](https://github.com/iou-bohun/Unity_Study/assets/56661597/b4d9b172-1c2e-471b-8dbb-99d06b59e8c8)
+   이 잘라진 문장들을 Dialogue 에 넘긴다.   
+   ```c#
+   //대사의 행 만큼 반복
+      for(int i=1; i<data.Length;)// 1번째 행에는  안덱스가 들어가서 제외 ex) id, 이름, 대사
+      {
+          string[] row = data[i].Split(new char[] { ',' });  // "," 기준으로 나눠서 저장 
+      
+          Dialogue dialogue = new Dialogue();// dialogue형태의 대사 리스트 생성
+          dialogue.name = row[1]; //dialogue의 이름에 row[1]값 저장 = 이름 저장 
+          Debug.Log(row[1]);
+          List<string> contextList = new List<string>();//대사 한 줄을 담을 리스트 생성/ 대사가 한 인물에 대해서 여려줄이 있을수 있기 때문에 
+          do
+          {
+              contextList.Add(row[2]);//대사를 리스트에 담기 
+              Debug.Log(row[2]);
+              if (++i < data.Length)//i증가시키고= 다음줄
+              {
+                  row = data[i].Split(new char[] { ',' }); //다음줄의 ID/캐릭터이름/대사 자르기 
+              }
+              else break; //i가 대사 전체 길이보다 길면 빠져나오기 
+          } while (row[0].ToString() == ""); // ID가 빈칸이면 반복
+          
+      }
+      return dialogueList.ToArray();//리스트를 반환 타입인 배열로
+   ```
+   dialogue.name에 row[1]값을 저장해 이름을 저장하고.
+   대사 한 줄을 담을 리스트 contextList를 생성해 여기에 row[2] 대사를 저장한다.
+   하지만 한 인물이 다음과 같이 2줄 이상이 될 수 있다.
+   ![image](https://github.com/iou-bohun/Unity_Study/assets/56661597/df5da7e5-26c7-49a1-94e3-7f506a7a7c07)
+   ``` c#
+   do
+    {
+        contextList.Add(row[2]);//대사를 리스트에 담기 
+        Debug.Log(row[2]);
+        if (++i < data.Length)//i증가시키고= 다음줄
+        {
+            row = data[i].Split(new char[] { ',' }); //다음줄의 ID/캐릭터이름/대사 자르기 
+        }
+        else break; //i가 대사 전체 길이보다 길면 빠져나오기 
+    } while (row[0].ToString() == ""); // ID가 빈칸이면 반복
+   ```   
+  그래서 다음과 같은 반복문을 실행해준다. 
+
+   
 
    
 
