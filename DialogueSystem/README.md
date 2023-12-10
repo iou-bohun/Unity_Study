@@ -1,4 +1,4 @@
-# Dialogue System (Using CSV)
+# Dialogue System (Using CSV) NPC대화 느낌
   CSV파일을 이용한 대화 시스템 / ?CSV : (Comma Split Value), 콤마로 데이터 열을 나눈 파일
 
 1. 틀을 만들자
